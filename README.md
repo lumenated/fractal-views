@@ -83,3 +83,14 @@ class BookController extends Controller
   }
 }
 ```
+
+# Running tests
+after installing the dependencies with:
+```sh
+composer install
+```
+
+Execute the following command to execute the tests:
+```sh
+vendor/bin/phpunit
+```

@@ -1,0 +1,13 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "require": {
+        "league/fractal": "^0.15.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lumenated\\FractalViews\\": "src/"
+        }
+    }
+}
