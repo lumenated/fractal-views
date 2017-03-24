@@ -1,6 +1,8 @@
 # Fractal views
 A view abstraction for Fractal making it more simple to integrate inside a framework.
 
+![fractal views](https://cloud.githubusercontent.com/assets/4613944/24282298/f421469c-105e-11e7-9c8d-404ec7d05ad2.png)
+
 # Installation
 ```sh
 composer require lumenated/fractal-views
