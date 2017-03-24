@@ -6,9 +6,17 @@
         </testsuite>
     </testsuites>
 
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+            <exclude></exclude>
+        </whitelist>
+    </filter>
+
     <logging>
         <log type="coverage-html" target="coverage/report.html" lowUpperBound="35"
              highLowerBound="70"/>
+        <log type="coverage-clover" target="coverage/clover.xml"/>
         <log type="testdox-html" target="docs/testdox.html"/>
         <log type="testdox-text" target="docs/testdox.txt"/>
     </logging>
