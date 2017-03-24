@@ -2,6 +2,7 @@
 A view abstraction for Fractal making it more simple to integrate inside a framework.
 
 ![fractal views](https://cloud.githubusercontent.com/assets/4613944/24282298/f421469c-105e-11e7-9c8d-404ec7d05ad2.png)
+[![Build Status](https://travis-ci.org/lumenated/fractal-views.svg?branch=master)](https://travis-ci.org/lumenated/fractal-views)
 
 # Installation
 ```sh
