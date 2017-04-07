@@ -51,6 +51,20 @@ class ViewTest extends TestCase
         $this->assertEquals($this->manager->createData($collection)->toArray(), $this->view->renderMany($resources, $cursor));
     }
 
+    public function testRenderWithOne()
+    {
+        $resource = new Example(1);
+        $item = $this->view->render($resource);
+        $this->assertEquals($item, $this->view->renderOne($resource));
+    }
+
+    public function testRenderWithMany()
+    {
+        $collection = [new Example(1)];
+        $items = $this->view->render($collection);
+        $this->assertEquals($items, $this->view->renderMany($collection));
+    }
+
     public function renderManyProvider()
     {
         return [

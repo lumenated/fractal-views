@@ -7,6 +7,7 @@ use League\Fractal\Manager;
 use League\Fractal\Pagination\Cursor;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
+use Traversable;
 
 /**
  * Class View
@@ -15,9 +16,10 @@ use League\Fractal\Resource\Item;
 abstract class View
 {
     /**
-     * @var null
+     * @var
      */
-    protected $transformerClass = null;
+    protected $transformerClass;
+
     /**
      * @var Manager
      */
@@ -30,6 +32,22 @@ abstract class View
     public function __construct(Manager $manager)
     {
         $this->manager = $manager;
+    }
+
+    /**
+     * Renders a single resource or collection into a serializable array
+     * @param $resource
+     * @param null $cursor
+     * @description render a collection or single item to an array using a transformer
+     * @return array
+     */
+    public function render($resource, $cursor = null)
+    {
+        if (is_array($resource) || $resource instanceof Traversable) {
+            return $this->renderMany($resource, $cursor);
+        }
+
+        return $this->renderOne($resource);
     }
 
     /**
