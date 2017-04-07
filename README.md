@@ -70,20 +70,21 @@ class BookController extends Controller
   public function __construct(BookView $view) 
   {
     $this->view = $view;
+    
   }
   
   public function get($id) 
   {
     $book = Book::findOrFail($id);
     
-    return response()->json($this->view->renderOne($book));
+    return response()->json($this->view->render($book));
   }
   
   public function getAll() 
   {
     $books = Book::all();
     
-    return response()->json($this->view->renderMany($books));
+    return response()->json($this->view->render($books));
   }
 }
 ```
